@@ -9,9 +9,9 @@ class Valuation:
     value: float
 
     def __init__(self, fund, units_held, unit_price, value):
-        def floatify(v): 
-            return float(v.replace(',','')) if isinstance(v, str) else v
-        
+        def floatify(v):
+            return float(v.replace(",", "")) if isinstance(v, str) else v
+
         self.fund = fund
         self.units_held = floatify(units_held)
         self.unit_price = floatify(unit_price)

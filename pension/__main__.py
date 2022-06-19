@@ -1,5 +1,4 @@
 import logging
-import json
 from datetime import datetime
 
 from .config import Config
@@ -19,7 +18,6 @@ if __name__ == "__main__":
         with open(f"/error/{datetime.now()}.html", "w") as f:
             f.write(driver.page_source)
         raise RuntimeError(f"Error at {driver.current_url}") from error
-
 
     # Present results
     print(output(valuations))

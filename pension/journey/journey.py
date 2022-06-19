@@ -10,7 +10,7 @@ class PensionJourney:
     def __init__(self, driver, config):
         self.driver = driver
         self.config = config
-        
+
     def _login(self):
         self.driver.get(self.config.start_url)
         element_by_css(self.driver, CSS_LOGIN_PAGE).click()
@@ -25,9 +25,11 @@ class PensionJourney:
     def _parse_valuations(self):
         time.sleep(5)
         page = self.driver.page_source
-        matches = re.findall(r'"\$FundName\$pyButtonLabel":"(?P<fund>[\s\w]*)","\$TotalUnits\$pyCaption":"(?P<units>[\d\.]*)","\$BidPrice\$pyCaption":"(?P<unit_price>[\d\.]*)","\$TotalValue\$pyCaption":"(?P<total>[\d\.]*)"', page)
+        matches = re.findall(
+            r'"\$FundName\$pyButtonLabel":"(?P<fund>[\s\w]*)","\$TotalUnits\$pyCaption":"(?P<units>[\d\.]*)","\$BidPrice\$pyCaption":"(?P<unit_price>[\d\.]*)","\$TotalValue\$pyCaption":"(?P<total>[\d\.]*)"',
+            page,
+        )
         return [Valuation(*m) for m in matches]
-
 
     def run(self):
         self._login()
