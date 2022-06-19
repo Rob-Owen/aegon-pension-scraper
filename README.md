@@ -9,7 +9,7 @@ This is a hobby project. Use at your own risk.
 Because the website is horrible. Run this on a schedule to build a pension value history.
 
 ## How?
-This Python app uses Selenium to automate a headless web browser, log in and extract relevant data from the website. Current valuations are printed to STDOUT.
+This Python app uses Selenium to automate a headless web browser, log in and extract relevant data from the Aegon website. Current pension valuation and fund details are printed to STDOUT.
 
 Runs in docker. Does not work on ARM architectures.
 
