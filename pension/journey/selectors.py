@@ -1,0 +1,5 @@
+CSS_LOGIN_PAGE = "a[href='https://extranet.secure.aegon.co.uk/login/showLoginPgAction.do?method=showLoginPage&loginStyle=PH']"
+CSS_FIRST_PLAN = "tbody > tr:first-child > td > a"
+XPATH_LOGIN_BUTTON = ".//button[contains(text(), 'Login')]"
+ID_USERNAME_FIELD = "inputUserId"
+ID_PASSWORD_FIELD = "inputPassword"

@@ -1,0 +1,8 @@
+services:
+  scanner:
+    build: .
+    volumes:
+      - ./error:/error
+    environment:
+      - PENSION_USERNAME=${PENSION_USERNAME}
+      - PENSION_PASSWORD=${PENSION_PASSWORD}
