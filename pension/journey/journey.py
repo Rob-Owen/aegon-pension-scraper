@@ -13,7 +13,7 @@ class PensionJourney:
 
     def _login(self):
         self.driver.get(self.config.start_url)
-        element_by_css(self.driver, CSS_LOGIN_PAGE).click()
+        # element_by_css(self.driver, CSS_LOGIN_PAGE).click()
         element_by_id(self.driver, ID_USERNAME_FIELD).send_keys(self.config.login)
         element_by_id(self.driver, ID_PASSWORD_FIELD).send_keys(self.config.password)
         self.driver.find_element_by_xpath(XPATH_LOGIN_BUTTON).click()
